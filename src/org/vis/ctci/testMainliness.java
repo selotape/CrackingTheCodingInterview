@@ -14,7 +14,7 @@ public class testMainliness {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Java version is " + System.getProperty("java.version"));
+		System.out.println("Java version is " + System.getProperty("java.version")); //now with comments
 	}
 
 }
