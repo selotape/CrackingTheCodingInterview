@@ -27,17 +27,20 @@ public class BitManipulationTests {
 		assertEquals(0, nextSmallestWithSameBitCount(7));
 	}
 	
-	
 	@Test
 	public void testnextLargestWSameBitCount(){
 		assertEquals(88, nextLargestWithSameBitCount(56)); // 000111000 -> 001011000
 		assertEquals(104, nextLargestWithSameBitCount(88)); // 001011000 -> 001101000
 		assertEquals(112, nextLargestWithSameBitCount(104));// 001101000 -> 001110000
-		
 		assertEquals(112, nextLargestWithSameBitCount(104)); // 01111 -> 10111
-		
 		assertEquals(0, nextLargestWithSameBitCount(-1)); 
-		
 	}
 
+	@Test
+	public void testBitDistance(){
+		assertEquals(3, bitDistance(0, 7));
+		assertEquals(6, bitDistance(10922, 10901));
+		assertEquals(bitDistance(10901, 10922), bitDistance(10922, 10901));
+		assertEquals(4, bitDistance(10922, 10752));
+	}
 }

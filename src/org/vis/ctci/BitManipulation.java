@@ -11,8 +11,16 @@ public class BitManipulation {
 	public static boolean isAlmostPowerOfTwo(int num) {
 		return isPowerOfTwo(num+1);
 	}
-	private static boolean isPowerOfTwo(int num) {
+	public static boolean isPowerOfTwo(int num) {
 		return (num != 0) && ((num & (num-1)) == 0);
+	}
+	public static int countBits(int num){ //TODO - write tests
+		int count = 0;
+		while (num!=0){
+			if ((num & 1) == 1) count++;
+			num >>>= 1;
+		}
+		return count;
 	}
 
 	public static int longestBitStrech(int num){
@@ -47,12 +55,12 @@ public class BitManipulation {
 		if (num == Integer.MAX_VALUE || num <= 0 || isAlmostPowerOfTwo(num)) { // TODO - change edgecase to be 0111111000...
 			return 0;
 		}
-		
+
 		int position = 0;
-		
+
 		while (getBit(num, position) == 0) position++; // skip lsb 0's
 		while (getBit(num, position) == 1) position++; // now skip lsb 1's
-		
+
 		return flipBit(flipBit(num, position), position-1);
 	}
 	public static int nextSmallestWithSameBitCount(int num){
@@ -62,7 +70,12 @@ public class BitManipulation {
 		int position = 0;
 		while (getBit(num, position) == 1) position++; // skip over lsb 1's
 		while (getBit(num, position) == 0) position++; // skip to where lsb 0's end
-				
+
 		return flipBit(flipBit(num, position), position -1);
+	}
+
+	public static int bitDistance(int a, int b){
+		int xored = a^b;
+		return countBits(xored);
 	}
 }
