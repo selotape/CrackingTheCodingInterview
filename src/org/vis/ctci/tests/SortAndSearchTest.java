@@ -21,7 +21,12 @@ public class SortAndSearchTest {
 
 	@Test
 	public void testSortByAnagram() {
-		fail("Not yet implemented"); // TODO
+		String[] strings = new String[]{ "ddd", "aaa", "bbz", "zbb",  "bbd"};
+		String[] expected1 = new String[] {"aaa", "bbd", "ddd", "bbz", "zbb"};
+		String[] expected2 = new String[] {"aaa", "bbd", "ddd", "zbb", "bbz"};
+		SortAndSearch.SortByAnagram(strings);
+		
+		assertTrue( Arrays.equals(strings, expected1) || Arrays.equals(strings, expected2));
 	}
 
 }
