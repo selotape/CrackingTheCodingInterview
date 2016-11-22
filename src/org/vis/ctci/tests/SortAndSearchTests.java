@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.junit.Test;
 import org.vis.ctci.SortAndSearch;
 
-public class SortAndSearchTest {
+public class SortAndSearchTests {
 
 	@Test
 	public void testMergeIntoA() {
@@ -21,9 +21,9 @@ public class SortAndSearchTest {
 
 	@Test
 	public void testSortByAnagram() {
-		String[] strings = new String[]{ "ddd", "aaa", "bbz", "zbb",  "bbd"};
-		String[] expected1 = new String[] {"aaa", "bbd", "ddd", "bbz", "zbb"};
-		String[] expected2 = new String[] {"aaa", "bbd", "ddd", "zbb", "bbz"};
+		String[] strings = new String[]{ "ddd", "aaa", "bbz", "zbb",  "bbd", "aaaa"};
+		String[] expected1 = new String[] {"aaa", "aaaa", "bbd", "ddd", "bbz", "zbb"};
+		String[] expected2 = new String[] {"aaa", "aaaa", "bbd", "ddd", "zbb", "bbz"};
 		SortAndSearch.SortByAnagram(strings);
 		
 		assertTrue( Arrays.equals(strings, expected1) || Arrays.equals(strings, expected2));
